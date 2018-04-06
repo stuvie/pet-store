@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<property name="STDOUT_LOG_PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} %highlight(%-5level) %logger{96}.%M - %msg%n"/>
+	
+	<logger name="org.springframework"		level="WARN"/>
+	<logger name="springfox.documentation"	level="WARN"/>
+	
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${STDOUT_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Spring Boot: Pet Services</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"></link>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-1">
+			<h2>Spring Boot: Pet Services</h2>
+			<p>message: <span th:text="${message}"></span></p>
+			
+			<div class="col-md-6">
+				<table class="table table-striped">
+			    	<tr><th>id</th><th>Name</th><th>Category</th><th>Status</th><th>Photo</th></tr>
+			    	<tr th:each="item : ${pets}">
+			    		<td th:text="${item.id}"></td>
+			    		<td th:text="${item.name}"></td>
+			    		<td th:text="${item.category}"></td>
+			    		<td th:text="${item.status}"></td>
+			    		<td th:text="${item.photoUrl}"></td>
+			    	</tr>
+			    </table>
+			</div>
+			<div class="row"></div>
+		    
+		    <h3>links</h3>
+		    <ul id="links">
+				<li><a href="/apis/v1/pets">pets API - list</a></li>
+				<li><a href="/apis/v1/pets/2">pets API - get by id</a></li>
+				<li><a href="/apis/v1/pets?name=Ziggy">pets API - get by name</a></li>
+				<li><a href="swagger-ui.html">swagger-ui</a></li>
+				<li><a href="actuatorlinks">actuator links</a></li>
+		    </ul>
+		    
+    	</div>
+	</div>
+</body>
+</html>

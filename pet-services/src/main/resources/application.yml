@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: pets-microservice
+
+server:
+  port: 9999
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: ALWAYS
+ 
+info:
+  app-name: ${spring.application.name}
+  server-port: ${server.port}
+  message: spring boot is fun
+  operating-system: ${os.name} ${os.version}
+  java:
+    vendor: ${java.vm.vendor}
+    version: ${java.runtime.version}
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            test:
+                uri: http://localhost:9999
+                metadata:
+                  management.context-path: /actuator
+
+eureka:   
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

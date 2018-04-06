@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot: Actuator Links</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"></link>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-4">
+			<h2>Spring Boot: Actuator Links</h2>
+
+			<p>message: <span th:text="${message}"></span></p>
+			
+			<ul>
+				<li><a href="/actuator/health">health check</a></li>
+				<li><a href="/actuator/info">info</a></li>
+				<li><a href="/actuator/metrics">performance metrics</a></li>
+				<li><a href="/actuator/env">environment variables</a></li>
+				<li><a href="/actuator/autoconfig">auto-config report</a></li>
+				<li><a href="/actuator/configprops">collated list of all @ConfigurationProperties</a></li>
+				<li><a href="/actuator/mappings">url mappings</a></li>
+				<li><a href="/actuator/beans">spring beans</a></li>
+				<li><a href="/actuator/trace">trace of the last 100 HTTP requests</a></li>
+				<li><a href="/actuator/actuator">actuator</a></li>
+				<li><a href="/actuator/dump">performs a thread dump</a></li>
+				<li><a href="/actuator/heapdump">download a compressed hprof heap dump file</a></li>
+			</ul>
+			
+		    <a href="/home">back to home page</a>
+    	</div>
+    	<div class="col-md-6"></div>
+	</div>
+</body>
+</html>
