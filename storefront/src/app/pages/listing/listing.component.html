@@ -1,0 +1,8 @@
+<div>
+  <div *ngIf="pets.length === 0">
+    loading ...
+  </div>
+  <div *ngFor="let pet of pets">
+    <app-pet-card [pet]="pet"></app-pet-card>
+  </div>
+</div>
