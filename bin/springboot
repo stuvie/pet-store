@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# this is a wrapper for the spring-cli, for generating microservice projects
+# install spring-cli like this:
+# brew tap pivotal/tap
+# brew install springboot
+# see https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html
+#
+groupId=com.fywss.spring
+bootVersion=2.0.1.RELEASE
+
+usage() {
+	echo usage: springboot 'projectName' && exit 1
+}
+
+if test $# -lt 1; then
+	usage
+fi
+
+projectName=$1
+
+spring init -b $bootVersion --dependencies actuator,devtools,web,thymeleaf,jpa,h2,data-rest,security --groupId $groupId --artifactId $projectName --name $projectName $projectName
