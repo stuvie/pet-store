@@ -22,15 +22,15 @@ info:
   java:
     vendor: ${java.vm.vendor}
     version: ${java.runtime.version}
-  cloud:
-    discovery:
-      client:
-        simple:
-          instances:
-            test:
-                uri: http://localhost:9999
-                metadata:
-                  management.context-path: /actuator
+  # cloud:
+  #   discovery:
+  #     client:
+  #       simple:
+  #         instances:
+  #           test:
+  #               uri: http://localhost:9999
+  #               metadata:
+  #                 management.context-path: /actuator
 
 eureka:   
   instance:
