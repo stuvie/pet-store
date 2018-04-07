@@ -22,4 +22,10 @@ node {
       sh './mvnw checkstyle:checkstyle pmd:pmd sonar:sonar'
     }
 	}
+  stage('Backend Deploy to PCF') {
+    dir('pet-services') {
+      sh 'cf push'
+      sh 'slack -bot successful backend deploy to PCF'
+    }
+	}
 }
