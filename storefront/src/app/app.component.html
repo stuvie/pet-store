@@ -1,8 +1,8 @@
 <div>
   <mat-toolbar color="primary">
-    <span><mat-icon>mood</mat-icon></span>
+    <span><mat-icon>filter_vintage</mat-icon></span>
 
-    <span>Yay, Material in Angular 2!</span>
+    <span>Pet Shop Boys</span>
 
     <button mat-icon-button [mat-menu-trigger-for]="menu">
       <mat-icon>more_vert</mat-icon>
@@ -15,9 +15,20 @@
   </mat-toolbar>
 
   <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Option 1</button>
-    <button mat-menu-item>Option 2</button>
+    <button mat-menu-item><a href="/">Home</a></button>
+    <button mat-menu-item><a href="list">List</a></button>
+    <button mat-menu-item><a href="create">Create</a></button>
+    <button mat-menu-item><a href="sink">Kitchen Sink</a></button>
   </mat-menu>
 </div>
 
 <router-outlet></router-outlet>
+
+<div>
+    <mat-toolbar color="primary">
+        <span>About Pet Shop Boys</span>     
+    </mat-toolbar>
+    <mat-toolbar color="warn">
+        <span>Pet Shop Boys footer</span>     
+    </mat-toolbar>
+</div>

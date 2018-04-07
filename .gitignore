@@ -7,6 +7,7 @@
 /out-tsc
 
 # dependencies
+hide
 */node_modules/
 */coverage/
 
