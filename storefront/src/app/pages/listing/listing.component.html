@@ -1,8 +1,16 @@
-<div>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+  
+<div class="pet-list">
   <div *ngIf="pets.length === 0">
     loading ...
   </div>
-  <div *ngFor="let pet of pets">
-    <app-pet-card [pet]="pet"></app-pet-card>
-  </div>
+  <mat-grid-list [cols]="cols" gutterSize="32px">
+    <mat-grid-tile *ngFor="let pet of pets">
+      <app-pet-card [pet]="pet"></app-pet-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

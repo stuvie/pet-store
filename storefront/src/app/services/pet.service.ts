@@ -9,11 +9,13 @@ export class PetService {
 
   constructor(private http: HttpClient) { }
 
-  petServiceUrl = 'http://steve-pet-services.cfapps.io/apis/v1/pets';
+  petServiceLocal = 'http://localhost:9999/apis/v1/pets';
+  petServiceCloud = 'http://steve-pet-services.cfapps.io/apis/v1/pets';
+  petServiceUrl = this.petServiceLocal;
 
   getPets():Observable<Pet[]> {
     return this.http.get<Pet[]>(this.petServiceUrl).map((value, index) => {
-      console.log('PetService got', value);
+      // console.log('PetService got', value);
       
       return value.map((petData) => {
           const pet = new Pet();

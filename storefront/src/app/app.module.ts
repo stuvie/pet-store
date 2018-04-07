@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -13,6 +14,7 @@ import { PetService } from './services/pet.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListingComponent } from './pages/listing/listing.component';
 import { CreateComponent } from './pages/create/create.component';
+import { ViewComponent } from './pages/view/view.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { CreateComponent } from './pages/create/create.component';
     PetCardComponent,
     KitchensinkComponent,
     ListingComponent,
-    CreateComponent
+    CreateComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,

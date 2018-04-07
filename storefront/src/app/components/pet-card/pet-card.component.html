@@ -1,5 +1,12 @@
-<mat-card>
-  <button mat-raised-button color="primary">{{pet.name}}</button>
-  <button mat-raised-button color="primary">{{pet.status}}</button>
-  <button mat-raised-button color="accent">{{pet.category}}</button>
+<mat-card class="pet-card">
+  <mat-card-header class="pet-header">
+    <mat-card-title>{{pet.name}} is {{pet.status}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{pet.photoUrl}}">
+  
+  <mat-card-actions>
+    <button mat-raised-button color="accent">Like</button>
+    <button mat-raised-button color="accent">Adopt</button>
+  </mat-card-actions>
 </mat-card>

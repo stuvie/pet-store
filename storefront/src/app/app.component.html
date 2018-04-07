@@ -1,25 +1,12 @@
 <div>
   <mat-toolbar color="primary">
-    <span><mat-icon>filter_vintage</mat-icon></span>
+    <span><a class="plain" href="/"><mat-icon>home</mat-icon></a></span>
+    <span class="spaced">Pet Shop Boys</span>
+    <span class="example-spacer"></span>
 
-    <span>Pet Shop Boys</span>
-
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <button mat-menu-item><a rel="noopener" href="/">Home</a></button>
-    <button mat-menu-item><a rel="noopener" href="list">List</a></button>
-    <button mat-menu-item><a rel="noopener" href="create">Create</a></button>
-    <button mat-menu-item><a rel="noopener" href="sink">Kitchen Sink</a></button>
+    <button mat-raised-button color="accent"><a href="create">Create</a></button>
     
   </mat-toolbar>
-
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item><a href="/">Home</a></button>
-    <button mat-menu-item><a href="list">List</a></button>
-    <button mat-menu-item><a href="create">Create</a></button>
-    <button mat-menu-item><a href="sink">Kitchen Sink</a></button>
-  </mat-menu>
 </div>
 
 <router-outlet></router-outlet>

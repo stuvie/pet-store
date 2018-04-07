@@ -4,10 +4,11 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ListingComponent } from './pages/listing/listing.component';
 import { CreateComponent } from './pages/create/create.component';
 import { KitchensinkComponent } from './pages/kitchensink/kitchensink.component';
+import { ViewComponent } from './pages/view/view.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'list', component: ListingComponent },
+  { path: '', component: ListingComponent },
+  { path: 'view/:id', component: ViewComponent },
   { path: 'create', component: CreateComponent },
   { path: 'sink', component: KitchensinkComponent }
 ];
