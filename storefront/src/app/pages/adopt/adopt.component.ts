@@ -30,7 +30,7 @@ export class AdoptComponent implements OnInit {
     this.petService.deletePet(this.id).subscribe(
       (data) => {
         // success
-        console.log('AdoptComponent got', data);
+        // console.log('AdoptComponent got', data);
         this.pet = data;
       },
       (error) => {

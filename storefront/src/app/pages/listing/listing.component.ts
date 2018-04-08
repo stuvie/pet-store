@@ -37,7 +37,7 @@ export class ListingComponent implements OnInit {
     this.petService.getPets().subscribe(
       (data) => {
         // success
-        console.log('ListingComponent got', data);
+        // console.log('ListingComponent got', data);
         this.pets = data;
       },
       (error) => {

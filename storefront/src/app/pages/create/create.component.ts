@@ -61,17 +61,17 @@ export class CreateComponent implements OnInit {
   onSubmit() {
     if (this.myForm.valid) {
       this.submitted = true;
-      console.log('Form valid!', this.myForm.value.name);
-      console.log('Form:', this.myForm);
+      // console.log('Form valid!', this.myForm.value.name);
+      // console.log('Form:', this.myForm);
       const petData = this.myForm.value.name;
       petData.status = 'available';
       this.pet = new Pet(petData);
-      console.log(this.pet);
+      // console.log(this.pet);
       this.petService.createPet(this.pet).subscribe(
         (data) => {
           // success
-          console.log('CreateComponent got', data);
           this.proto = data;
+          // console.log('CreateComponent got', data);
           // this.router.navigate(['/']);
         },
         (error) => {

@@ -21,7 +21,7 @@ export class ViewComponent implements OnInit {
   ) {
     this.route.params.subscribe(
       params => {
-        console.log(params);
+        // console.log(params);
         this.id = params.id;
       }
     );
@@ -31,7 +31,7 @@ export class ViewComponent implements OnInit {
     this.petService.getPet(this.id).subscribe(
       (data) => {
         // success
-        console.log('ViewComponent got', data);
+        // console.log('ViewComponent got', data);
         this.pet = data;
       },
       (error) => {
