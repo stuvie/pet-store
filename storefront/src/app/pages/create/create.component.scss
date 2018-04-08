@@ -1,0 +1,8 @@
+.pet-create {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-create > * {
+  width: 70%;
+}

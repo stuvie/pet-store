@@ -1,3 +1,37 @@
-<p>
-  create works!
-</p>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+
+<form class="pet-create" (ngSubmit)="onSubmit(myForm)" [formGroup]="myForm">
+  
+  <mat-form-field>
+      <input matInput 
+      class="form-control"
+      [formControl]="name"
+      required
+      placeholder="Pet Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+    class="form-control"
+    [formControl]="photoUrl"
+    required
+    placeholder="photoUrl">
+  </mat-form-field>
+
+  
+  <mat-form-field>
+    <mat-select
+    class="form-control"
+    [formControl]="category"
+    placeholder="Category">
+      <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button class="btn btn-primary" type="submit" color="accent">Submit</button>
+
+</form>
