@@ -31,6 +31,17 @@ public class Pet {
 	@Size(min = 2, max = 60, message = "photoUrl must be between {min} and {max} characters long")
 	private String photoUrl;
 
+	public Pet() {
+	}
+	
+	public Pet(String name, String status, String category, String photoUrl) {
+		super();
+		this.name = name;
+		this.status = status;
+		this.category = category;
+		this.photoUrl = photoUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "Pet [id=" + id + ", name=" + name + ", status=" + status + ", category=" + category + ", photoUrl="

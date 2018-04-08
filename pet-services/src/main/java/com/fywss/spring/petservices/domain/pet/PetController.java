@@ -30,7 +30,7 @@ public class PetController {
 	@Autowired
 	private PetService service;
 	
-	@GetMapping(value = "")
+	@GetMapping
 	@ApiOperation (value = "Get all Pets", notes = "Returns a List of Pet records", response = Pet.class, responseContainer = "List")
 	public List<Pet> findAll() {
 		return service.findAll();
