@@ -12,7 +12,7 @@
     <p>Form status: {{ myForm.status | json }}</p>
     <p>dirty : {{ myForm.controls.name.dirty | json }}</p>
     -->
-    <form class="pet-create" (ngSubmit)="onSubmit(myForm)" [formGroup]="myForm">
+    <form class="pet-create" (ngSubmit)="onSubmit()" [formGroup]="myForm">
       
       <mat-form-field>
           <input matInput 
@@ -44,7 +44,7 @@
           <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-raised-button class="btn btn-primary" type="submit" color="accent" [disabled]="!myForm.status === 'VALID'">Submit</button>
+      <button mat-raised-button class="btn btn-primary" type="submit" color="accent" [disabled]="!(myForm.status === 'VALID')">Submit</button>
     </form>
   </div>
 
