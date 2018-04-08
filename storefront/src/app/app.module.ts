@@ -36,7 +36,7 @@ import { AdoptComponent } from './pages/adopt/adopt.component';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [PetService],
+  providers: [PetService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
