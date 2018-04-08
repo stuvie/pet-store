@@ -51,6 +51,8 @@ public class PetService {
 		}
 		Pet record = existing.get();
 		record.setName(obj.getName());
+		record.setStatus(obj.getStatus());
+		record.setCategory(obj.getCategory());
 		record.setPhotoUrl(obj.getPhotoUrl());
 		
 		logger.info("PetService updated: {}", record);
