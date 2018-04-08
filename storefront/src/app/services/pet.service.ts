@@ -20,9 +20,7 @@ export class PetService {
           pet.id = petData.id;
           pet.name = petData.name;
           pet.status = petData.status;
-          pet.category = petData.category;
           pet.photoUrl = petData.photoUrl;
-          pet.largePhotoUrl = petData.photoUrl;
           return pet;
       });
     });
@@ -36,8 +34,19 @@ export class PetService {
         pet.name = petData.name;
         pet.status = petData.status;
         pet.category = petData.category;
-        var re = /b.jpg/; 
+        var re = /b.jpg/;
         pet.photoUrl = petData.photoUrl.replace(re, "h.jpg");
+        return pet;
+    });
+  }
+
+  deletePet(id):Observable<Pet> {
+    const petUrl = `${this.petServiceUrl}/${id}`
+    return this.http.delete<Pet>(petUrl).map((petData) => {
+        const pet = new Pet();
+        pet.id = petData.id;
+        pet.name = petData.name;
+        pet.photoUrl = petData.photoUrl;
         return pet;
     });
   }

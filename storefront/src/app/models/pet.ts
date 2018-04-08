@@ -4,7 +4,6 @@ export class Pet {
   status: string;
   category: string;
   photoUrl: string;
-  largePhotoUrl: string;
 
   constructor() { }
   
@@ -14,6 +13,5 @@ export class Pet {
     this.status = petData.status;
     this.category = petData.category;
     this.photoUrl = petData.photoUrl;
-    this.largePhotoUrl = petData.photoUrl;
   }
 }

@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListingComponent } from './pages/listing/listing.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ViewComponent } from './pages/view/view.component';
+import { AdoptComponent } from './pages/adopt/adopt.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ViewComponent } from './pages/view/view.component';
     KitchensinkComponent,
     ListingComponent,
     CreateComponent,
-    ViewComponent
+    ViewComponent,
+    AdoptComponent
   ],
   imports: [
     BrowserModule,
