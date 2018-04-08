@@ -4,14 +4,12 @@ export class Pet {
   status: string;
   category: string;
   photoUrl: string;
-
-  constructor() { }
   
-  build(petData) {
-    this.id = petData.id;
-    this.name = petData.name;
-    this.status = petData.status;
-    this.category = petData.category;
-    this.photoUrl = petData.photoUrl;
+  constructor(data) {
+    this.id = data.id;
+    this.name = data.name;
+    this.status = data.status;
+    this.category = data.category;
+    this.photoUrl = data.photoUrl;
   }
 }

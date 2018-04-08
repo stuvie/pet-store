@@ -15,39 +15,25 @@ export class PetService {
 
   getPets():Observable<Pet[]> {
     return this.http.get<Pet[]>(this.petServiceUrl).map((value, index) => {
-      return value.map((petData) => {
-          const pet = new Pet();
-          pet.id = petData.id;
-          pet.name = petData.name;
-          pet.status = petData.status;
-          pet.photoUrl = petData.photoUrl;
-          return pet;
+      return value.map((data) => {
+        return new Pet(data);
       });
     });
   }
 
   getPet(id):Observable<Pet> {
     const petUrl = `${this.petServiceUrl}/${id}`
-    return this.http.get<Pet>(petUrl).map((petData) => {
-        const pet = new Pet();
-        pet.id = petData.id;
-        pet.name = petData.name;
-        pet.status = petData.status;
-        pet.category = petData.category;
-        var re = /b.jpg/;
-        pet.photoUrl = petData.photoUrl.replace(re, "h.jpg");
-        return pet;
+    return this.http.get<Pet>(petUrl).map((data) => {
+      var re = /b.jpg/;
+      data.photoUrl = data.photoUrl.replace(re, "h.jpg");
+      return new Pet(data);
     });
   }
 
   deletePet(id):Observable<Pet> {
     const petUrl = `${this.petServiceUrl}/${id}`
-    return this.http.delete<Pet>(petUrl).map((petData) => {
-        const pet = new Pet();
-        pet.id = petData.id;
-        pet.name = petData.name;
-        pet.photoUrl = petData.photoUrl;
-        return pet;
+    return this.http.delete<Pet>(petUrl).map((data) => {
+      return new Pet(data);
     });
   }
 
