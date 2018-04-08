@@ -10,3 +10,4 @@ insert into pet (name, category, status, photo_url) values ('Karl',		'dog', 'ava
 insert into pet (name, category, status, photo_url) values ('Bear',		'dog', 'adorable', 'https://i.imgur.com/gM37Bi4b.jpg');
 insert into pet (name, category, status, photo_url) values ('Chico',	'dog', 'available', 'https://i.imgur.com/oGK5hGLb.jpg');
 insert into pet (name, category, status, photo_url) values ('Henry',	'dog', 'available', 'https://i.imgur.com/iidzlDYb.jpg');
+insert into pet (name, category, status, photo_url) values ('Meesha',	'dog', 'relaxing', 'https://i.imgur.com/igfzMaUb.jpg');

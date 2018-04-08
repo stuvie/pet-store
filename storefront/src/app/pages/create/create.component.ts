@@ -15,10 +15,21 @@ export class CreateComponent implements OnInit {
   title = 'New Pet Input Form';
   pet: Pet = null;
   categories = ['cat', 'dog', 'racoon'];
+
+  proto = {
+    name: 'kkk',
+    status: '',
+    category: '',
+    photoUrl: ''
+  };
+
+  get diagnostic() { return JSON.stringify(this.proto); }
+
   myForm: FormGroup;
   name: FormControl;
   photoUrl: FormControl;
   category: FormControl;
+  submitted = false;
 
   constructor(
     private petService: PetService,
@@ -33,7 +44,7 @@ export class CreateComponent implements OnInit {
 
   createFormControls() {
     this.name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-    this.photoUrl = new FormControl('', Validators.required);
+    this.photoUrl = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.category = new FormControl('', Validators.required);
   }
 
@@ -49,7 +60,9 @@ export class CreateComponent implements OnInit {
 
   onSubmit() {
     if (this.myForm.valid) {
+      this.submitted = true;
       console.log('Form valid!', this.myForm.value.name);
+      console.log('Form:', this.myForm);
       const petData = this.myForm.value.name;
       petData.status = 'available';
       this.pet = new Pet(petData);
@@ -58,7 +71,8 @@ export class CreateComponent implements OnInit {
         (data) => {
           // success
           console.log('CreateComponent got', data);
-          this.router.navigate(['/']);
+          this.proto = data;
+          // this.router.navigate(['/']);
         },
         (error) => {
           // handle errors
