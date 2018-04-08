@@ -15,16 +15,30 @@ export class PetService {
 
   getPets():Observable<Pet[]> {
     return this.http.get<Pet[]>(this.petServiceUrl).map((value, index) => {
-      // console.log('PetService got', value);
-      
       return value.map((petData) => {
           const pet = new Pet();
+          pet.id = petData.id;
           pet.name = petData.name;
           pet.status = petData.status;
           pet.category = petData.category;
           pet.photoUrl = petData.photoUrl;
+          pet.largePhotoUrl = petData.photoUrl;
           return pet;
       });
+    });
+  }
+
+  getPet(id):Observable<Pet> {
+    const petUrl = `${this.petServiceUrl}/${id}`
+    return this.http.get<Pet>(petUrl).map((petData) => {
+        const pet = new Pet();
+        pet.id = petData.id;
+        pet.name = petData.name;
+        pet.status = petData.status;
+        pet.category = petData.category;
+        var re = /b.jpg/; 
+        pet.photoUrl = petData.photoUrl.replace(re, "h.jpg");
+        return pet;
     });
   }
 

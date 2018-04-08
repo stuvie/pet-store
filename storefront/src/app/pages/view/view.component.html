@@ -1,3 +1,24 @@
-<p>
-  view works!
-</p>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+
+<div class="pet-list">
+    <div *ngIf="pet === null">
+      loading ...
+    </div>
+    <div *ngIf="pet !== null">
+        <mat-card class="pet-card">
+            <mat-card-header class="pet-header">
+              <mat-card-title>Isn't {{pet.name}} adorable</mat-card-title>
+            </mat-card-header>
+          
+            <img mat-card-image src="{{pet.photoUrl}}">
+          
+            <mat-card-actions>
+              <a href="adopt/{{pet.id}}"><button mat-raised-button color="accent">Adopt</button></a>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

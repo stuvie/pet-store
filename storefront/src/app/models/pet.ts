@@ -4,9 +4,16 @@ export class Pet {
   status: string;
   category: string;
   photoUrl: string;
-  foo: string;
- 
-  constructor() {
-    this.foo = 'rohan';
+  largePhotoUrl: string;
+
+  constructor() { }
+  
+  build(petData) {
+    this.id = petData.id;
+    this.name = petData.name;
+    this.status = petData.status;
+    this.category = petData.category;
+    this.photoUrl = petData.photoUrl;
+    this.largePhotoUrl = petData.photoUrl;
   }
 }

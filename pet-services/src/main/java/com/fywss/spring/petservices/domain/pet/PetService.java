@@ -14,7 +14,7 @@ import com.fywss.spring.petservices.exception.NotFoundException;
 public class PetService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PetService.class);
-	private static final String ID_NOT_FOUND = "no user with id ";
+	private static final String ID_NOT_FOUND = "no record with id ";
 	
 	@Autowired
 	private PetRepository repository;
