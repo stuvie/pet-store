@@ -8,6 +8,7 @@
 
 # dependencies
 hide
+*/dist/
 */node_modules/
 */coverage/
 

@@ -28,4 +28,13 @@ node {
       sh 'slack -bot successful backend deploy to PCF'
     }
 	}
+	stage('Frontend Build') {
+	  dir('storefront') {
+      sh 'yarn install'
+      sh 'yarn ng -- build --prod --aot --no-progress'
+    }
+	}
+  stage('Frontend Deploy to PCF') {
+    sh './bin/nodejs2pcf storefront'
+	}
 }
