@@ -37,4 +37,10 @@ export class PetService {
     });
   }
 
+  createPet(petData):Observable<Pet> {
+    return this.http.post<Pet>(this.petServiceUrl, petData).map((data) => {
+      return new Pet(data);
+    });
+  }
+
 }

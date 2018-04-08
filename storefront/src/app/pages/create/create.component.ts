@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { PetService } from '../../services/pet.service';
 import { Pet } from '../../models/pet';
@@ -19,7 +20,10 @@ export class CreateComponent implements OnInit {
   photoUrl: FormControl;
   category: FormControl;
 
-  constructor() {
+  constructor(
+    private petService: PetService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -28,7 +32,7 @@ export class CreateComponent implements OnInit {
   }
 
   createFormControls() {
-    this.name = new FormControl('', Validators.required);
+    this.name = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.photoUrl = new FormControl('', Validators.required);
     this.category = new FormControl('', Validators.required);
   }
@@ -50,6 +54,16 @@ export class CreateComponent implements OnInit {
       petData.status = 'available';
       this.pet = new Pet(petData);
       console.log(this.pet);
+      this.petService.createPet(this.pet).subscribe(
+        (data) => {
+          // success
+          console.log('CreateComponent got', data);
+          this.router.navigate(['/']);
+        },
+        (error) => {
+          // handle errors
+        }
+      )
     }
   }
 }
