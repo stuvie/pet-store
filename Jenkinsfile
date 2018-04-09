@@ -25,7 +25,7 @@ node {
   stage('Backend Deploy to PCF') {
     dir('pet-services') {
       sh 'cf push'
-      sh 'slack -bot successful backend deploy to PCF'
+      sh 'slack -bot successful deploy of pet-services to PCF'
     }
 	}
 	stage('Frontend Build') {
@@ -37,7 +37,9 @@ node {
   // deploy to PCF isn't working, will investigate later
   /*
   stage('Frontend Deploy to PCF') {
-    sh '/Users/steve/bin/nodejs2pcf.sh storefront'
+    dir('storefront') {
+      sh '/Users/steve/bin/nodejs2pcf.sh storefront'
+    }
 	}
   */
 }
