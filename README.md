@@ -6,28 +6,32 @@ This pet-store is a 3-tier application for an online pet store. It provides the 
 * staff can add new pets to the pet store’s inventory
 * staff can remove pets that have been sold
 
-## storefront
+## frontend: storefront
 
-In the ``storefront`` folder you will find an Angular.js application implementing the front-end.
+In the ``storefront`` folder you will find an Angular.js application implementing the front-end. It consumes the REST API exposed by the pet store backend services
 
-This project was initialized with anglular-cli by running ``ng new --routing  --skip-git  --style=scss storefront``
+This project was initialized with anglular-cli-1.7.3 by running ``ng new --routing  --skip-git  --style=scss storefront``
+
+**technologies**: Angular-5.2.0, Angular Material-5.2.4 UI components, angular-cli-1.7.3, flex-layout (responsive), karma, protractor with jasmine, webpack will transpile typescript sources to ES5
 
 Unit tests are run via ``karma`` and end-to-end functional tests are run via ``protractor``.
 
-Typical commands to get going:
+Typical commands:
 
 * yarn install
 * ng serve
 * ng test
+* ng test --code-coverage 
 * ng e2e
 
-## pet-services
+## backend: pet-services
 
 In the ``pet-services`` folder you will find a spring boot RESTful web service supporting the back-end and data tiers of the application.
 
-It uses the most recent version of spring boot, version 2.0.1
 
 This project was initialized by running ``./bin/springboot pet-services``
+
+**technologies**: Spring Boot 2.0.1, Spring Actuator, Security, Data REST, Data JPA, MVC, Thymeleaf, Java 8, springfox, H2, hibernate
 
 ### build and test
 
@@ -42,7 +46,7 @@ After importing the project in your IDE, you can run the tests under ``src/test/
 
 ### run
 
-To start the application, execute:
+To start the pet-services backend, execute:
 
 ```
 ./mvnw spring-boot:run
