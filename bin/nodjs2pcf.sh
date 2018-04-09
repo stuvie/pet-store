@@ -14,6 +14,6 @@ fi
 
 projectName=$1
 
-cd $projectName
+cd $projectName || error
 cf push $projectName -b https://github.com/cloudfoundry/nodejs-buildpack || error
 slack -bot successful deploy of $projectName to PCF
