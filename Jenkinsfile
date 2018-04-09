@@ -35,11 +35,6 @@ node {
     }
 	}
   stage('Frontend Deploy to PCF') {
-    sh 'pwd'
-    sh 'ls -l'
-    sh 'ls -l bin'
-    sh 'whoami'
-    sh 'node --version'
-    sh 'nodejs2pcf.sh storefront'
+    sh '/Users/steve/bin/nodejs2pcf.sh storefront'
 	}
 }
