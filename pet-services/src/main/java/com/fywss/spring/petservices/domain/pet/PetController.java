@@ -43,7 +43,7 @@ public class PetController {
 	}
 	
 	@GetMapping(params = {"name"})
-	@ApiOperation (value = "Gets one Pet based on name", notes = "Returns a single Pet record", response = Pet.class)
+	// @ApiOperation (value = "Gets one Pet based on name", notes = "Returns a single Pet record", response = Pet.class)
     public Optional<Pet> findWithName(@RequestParam(value="name") String name) {
     	return service.findByName(name);
     }
