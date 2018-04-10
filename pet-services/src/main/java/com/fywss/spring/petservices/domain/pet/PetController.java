@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiOperation;
 
 @ControllerAdvice
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:5000", "https://devops.fywss.com"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:5000", "https://steve-petstore.cfapps.io", "https://devops.fywss.com"})
 @RequestMapping ("/apis/v1/pets")
 public class PetController {
 	
