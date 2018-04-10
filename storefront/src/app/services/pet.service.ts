@@ -9,8 +9,8 @@ export class PetService {
 
   constructor(private http: HttpClient) { }
 
-  petServiceLocal = 'http://localhost:9999/apis/v1/pets';
-  petServiceCloud = 'http://steve-pet-services.cfapps.io/apis/v1/pets';
+  petServiceLocal = 'http://localhost:9999/pet-services/apis/v1/pets';
+  petServiceCloud = 'https://steve-pet-services.cfapps.io/pet-services/apis/v1/pets';
   petServiceUrl = this.petServiceCloud;
 
   getPets():Observable<Pet[]> {

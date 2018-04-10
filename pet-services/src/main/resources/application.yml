@@ -4,10 +4,13 @@ spring:
 
 server:
   port: 9999
+  servlet:
+    context-path: /pet-services
 
 management:
   endpoints:
     web:
+      # base-path: /pet-services/actuator
       exposure:
         include: "*"  
   endpoint:

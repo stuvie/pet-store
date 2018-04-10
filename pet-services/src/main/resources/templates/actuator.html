@@ -3,6 +3,7 @@
 <head>
     <title>Spring Boot: Actuator Links</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <base href="/pet-services/actuator/">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"></link>
 </head>
 <body>
@@ -14,21 +15,21 @@
 			<p>message: <span th:text="${message}"></span></p>
 			
 			<ul>
-				<li><a href="/actuator/health">health check</a></li>
-				<li><a href="/actuator/info">info</a></li>
-				<li><a href="/actuator/metrics">performance metrics</a></li>
-				<li><a href="/actuator/env">environment variables</a></li>
-				<li><a href="/actuator/autoconfig">auto-config report</a></li>
-				<li><a href="/actuator/configprops">collated list of all @ConfigurationProperties</a></li>
-				<li><a href="/actuator/mappings">url mappings</a></li>
-				<li><a href="/actuator/beans">spring beans</a></li>
-				<li><a href="/actuator/trace">trace of the last 100 HTTP requests</a></li>
-				<li><a href="/actuator/actuator">actuator</a></li>
-				<li><a href="/actuator/dump">performs a thread dump</a></li>
-				<li><a href="/actuator/heapdump">download a compressed hprof heap dump file</a></li>
+				<li><a href="health">health check</a></li>
+				<li><a href="info">info</a></li>
+				<li><a href="metrics">performance metrics</a></li>
+				<li><a href="env">environment variables</a></li>
+				<li><a href="autoconfig">auto-config report</a></li>
+				<li><a href="configprops">collated list of all @ConfigurationProperties</a></li>
+				<li><a href="mappings">url mappings</a></li>
+				<li><a href="beans">spring beans</a></li>
+				<li><a href="trace">trace of the last 100 HTTP requests</a></li>
+				<li><a href="actuator">actuator</a></li>
+				<li><a href="dump">performs a thread dump</a></li>
+				<li><a href="heapdump">download a compressed hprof heap dump file</a></li>
 			</ul>
 			
-		    <a href="/home">back to home page</a>
+		    <a href="../home">back to home page</a>
     	</div>
     	<div class="col-md-6"></div>
 	</div>
