@@ -14,5 +14,5 @@ fi
 
 projectName=$1
 
-cf push $projectName -b https://github.com/cloudfoundry/nodejs-buildpack || error
+cf push $projectName -b staticfile_buildpack || error
 slack -bot successful deploy of $projectName to PCF
