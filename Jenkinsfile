@@ -34,12 +34,9 @@ node {
       sh 'yarn ng -- build --prod --aot --no-progress'
     }
 	}
-  // deploy to PCF isn't working, will investigate later
-  /*
   stage('Frontend Deploy to PCF') {
-    dir('storefront') {
-      sh '/Users/steve/bin/nodejs2pcf.sh storefront'
+    dir('storefront/dist') {
+      sh '/Users/steve/bin/nodejs2pcf.sh steve-petstore'
     }
 	}
-  */
 }
