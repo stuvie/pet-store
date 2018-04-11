@@ -14,5 +14,6 @@ fi
 
 projectName=$1
 
+cp ../Staticfile  Staticfile
 cf push $projectName -b staticfile_buildpack || error
 slack -bot successful deploy of $projectName to PCF
