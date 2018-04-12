@@ -5,6 +5,7 @@ node {
 	stage('Backend Build') {
 	  dir('pet-services') {
       sh 'printenv'
+      sh 'whoami'
       sh './mvnw clean compile'
     }
 	}
