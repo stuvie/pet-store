@@ -1,9 +1,13 @@
 node {
+  environment {
+    PATH = "/usr/local/bin:/Users/steve/bin:$PATH"
+  }
   stage('Checkout') {
       checkout scm
   }
 	stage('Backend Build') {
 	  dir('pet-services') {
+      sh 'printenv'
       sh './mvnw clean compile'
     }
 	}
