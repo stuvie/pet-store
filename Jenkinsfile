@@ -33,6 +33,7 @@ node {
 	stage('Frontend Build') {
 	  dir('storefront') {
       sh 'yarn install'
+      sh 'npm rebuild node-sass'
       sh 'yarn ng -- build --prod --aot --no-progress'
     }
 	}
