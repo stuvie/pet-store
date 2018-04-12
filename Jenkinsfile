@@ -28,8 +28,8 @@ node {
 	}
   stage('Backend Deploy to PCF') {
     dir('pet-services') {
-      sh 'cf push'
-      sh 'slack -bot successful deploy of pet-services to PCF'
+      sh '/usr/local/bin/cf push'
+      sh '/Users/steve/bin/slack -bot successful deploy of pet-services to PCF'
     }
 	}
 	stage('Frontend Build') {
