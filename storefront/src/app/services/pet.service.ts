@@ -11,7 +11,7 @@ export class PetService {
 
   petServiceLocal = 'http://localhost:9999/pet-services/apis/v1/pets';
   petServiceCloud = 'https://steve-pet-services.cfapps.io/pet-services/apis/v1/pets';
-  petServiceUrl = this.petServiceLocal;
+  petServiceUrl = this.petServiceCloud;
 
   getPets(): Observable<Pet[]> {
     return this.http.get<Pet[]>(this.petServiceUrl).map((value, index) => {
