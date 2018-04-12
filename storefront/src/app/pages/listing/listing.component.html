@@ -8,8 +8,8 @@
   <div *ngIf="pets.length === 0">
     loading ...
   </div>
-  <mat-grid-list [cols]="cols" gutterSize="32px">
-    <mat-grid-tile *ngFor="let pet of pets">
+  <mat-grid-list [cols]="cols" gutterSize="10px">
+    <mat-grid-tile class="pet-tile" *ngFor="let pet of pets">
       <app-pet-card [pet]="pet"></app-pet-card>
     </mat-grid-tile>
   </mat-grid-list>
