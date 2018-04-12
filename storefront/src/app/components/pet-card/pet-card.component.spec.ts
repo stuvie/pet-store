@@ -5,7 +5,7 @@ import { PetCardComponent } from './pet-card.component';
 describe('PetCardComponent', () => {
   let component: PetCardComponent;
   let fixture: ComponentFixture<PetCardComponent>;
-  let pet: {id: 1, name: 'Spot', status: 'single', photoUrl: 'google'};
+  let pet = {id: 1, name: 'Spot', status: 'single', category: 'cat', photoUrl: 'google'};
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,6 +23,7 @@ describe('PetCardComponent', () => {
   });
 
   it('should create', () => {
+    expect(pet.name).toBe('Spot');
     expect(component).toBeTruthy();
   });
 });

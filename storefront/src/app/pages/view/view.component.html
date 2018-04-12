@@ -9,16 +9,6 @@
       loading ...
     </div>
     <div *ngIf="pet !== null">
-        <mat-card class="pet-card">
-            <mat-card-header class="pet-header">
-              <mat-card-title>Isn't {{pet.name}} adorable</mat-card-title>
-            </mat-card-header>
-          
-            <img mat-card-image src="{{pet.photoUrl}}">
-          
-            <mat-card-actions>
-              <a href="adopt/{{pet.id}}"><button mat-raised-button color="accent">Adopt this {{pet.category}}</button></a>
-            </mat-card-actions>
-          </mat-card>
+      <app-pet-card [pet]="pet"></app-pet-card>
     </div>
 </div>

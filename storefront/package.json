@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve": "ng serve",
     "fywss": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build --prod",
     "test": "ng test",
@@ -27,6 +28,7 @@
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
     "eslint": "^4.19.1",
+    "npm": "^5.8.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -40,6 +42,7 @@
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jshint": "^2.9.5",
     "karma": "~2.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",

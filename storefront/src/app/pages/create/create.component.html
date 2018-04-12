@@ -49,17 +49,6 @@
   </div>
 
   <div [hidden]="!submitted">
-    <mat-card class="pet-card">
-      <mat-card-header class="pet-header">
-        <mat-card-title>Created record for {{ proto.name }}</mat-card-title>
-      </mat-card-header>
-    
-      <img mat-card-image src="{{proto.photoUrl}}">
-    
-      <mat-card-actions>
-        <a href="/"><button mat-raised-button color="accent">View pets</button></a>
-      </mat-card-actions>
-    </mat-card>
+    <app-pet-card [pet]="proto"></app-pet-card>
   </div>
-
 </div>

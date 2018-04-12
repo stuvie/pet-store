@@ -4,22 +4,27 @@
   margin: 2em auto;
   text-align: center;
   background-color: #006ac3;
-  border: 2px solid red;
+  // border: 2px solid red;
 }
 
 .pet-header {
-  text-align: center;
+  justify-content: center;
   color: #fedf01;
-  border: 2px solid orange;
+  // border: 2px solid orange;
+}
+
+.pet-title {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .pet-img {
-  border: 2px solid white;
   width: 100%;
+  // border: 2px solid white;
 }
 
 .pet-cta {
   text-align: center;
   margin: 1px;
-  border: 2px solid black;
+  // border: 2px solid black;
 }

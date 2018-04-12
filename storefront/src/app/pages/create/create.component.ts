@@ -70,6 +70,9 @@ export class CreateComponent implements OnInit {
       this.petService.createPet(this.pet).subscribe(
         (data) => {
           // success
+          data.cardTitle = `Created record for ${data.name}`;
+          data.ctaText = 'View pets';
+          data.ctaLink = '/';
           this.proto = data;
           // console.log('CreateComponent got', data);
           // this.router.navigate(['/']);
@@ -77,7 +80,7 @@ export class CreateComponent implements OnInit {
         (error) => {
           // handle errors
         }
-      )
+      );
     }
   }
 }

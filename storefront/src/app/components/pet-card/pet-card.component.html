@@ -1,11 +1,11 @@
 <mat-card class="pet-card">
   <mat-card-header class="pet-header">
-    <mat-card-title>{{pet.name}} is {{pet.status}}</mat-card-title>
+    <mat-card-title class="pet-title">{{pet.cardTitle}}</mat-card-title>
   </mat-card-header>
 
   <img mat-card-image class="pet-img" src="{{pet.photoUrl}}">
 
   <mat-card-actions class="pet-cta">
-    <a href="view/{{pet.id}}"><button mat-raised-button color="accent">View Details</button></a>
+    <a href="{{pet.ctaLink}}"><button mat-raised-button color="accent">{{pet.ctaText}}</button></a>
   </mat-card-actions>
 </mat-card>
