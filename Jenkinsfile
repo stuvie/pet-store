@@ -1,7 +1,4 @@
 node {
-  environment {
-    PATH = "/usr/local/bin:/Users/steve/bin:$PATH"
-  }
   stage('Checkout') {
       checkout scm
   }
