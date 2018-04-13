@@ -1,8 +1,11 @@
+.create-form {
+  background-color: dimgrey;
+  width: 60%;
+  margin: 20px;
+}
+  
 .pet-create {
+  // background-color: grey;
   display: flex;
   flex-direction: column;
-}
-
-.pet-create > * {
-  width: 70%;
 }
