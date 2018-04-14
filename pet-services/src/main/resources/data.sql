@@ -1,6 +1,6 @@
 insert into pet (name, category, status, photo_url) values ('Ziggy',	'cat', 'adorable', 'https://i.imgur.com/uQ0TA26b.jpg');
 insert into pet (name, category, status, photo_url) values ('Dexter',	'cat', 'available', 'https://i.imgur.com/D5YY8clb.jpg');
-insert into pet (name, category, status, photo_url) values ('Kaylee',	'cat', 'cute', 'https://i.imgur.com/YNT6OTbb.jpg');
+insert into pet (name, category, status, photo_url) values ('Kaylee',	'cat', 'cute', 'https://i.imgur.com/rvjUfjpb.jpg');
 insert into pet (name, category, status, photo_url) values ('Kenickie',	'cat', 'on hold', 'https://i.imgur.com/LOuSgXHb.jpg');
 
 insert into pet (name, category, status, photo_url) values ('Bear',		'dog', 'adorable', 'https://i.imgur.com/gM37Bi4b.jpg');
