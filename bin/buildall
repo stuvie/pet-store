@@ -1,0 +1,30 @@
+#!/bin/sh
+
+backend=pet-services
+frontend=storefront
+
+failed() {
+	echo $1
+	exit $2
+}
+
+cd $backend || failed "./bin/buildall must be run from the top-level of the project repo" 1
+
+printf "\n<=== building backend: $backend ===>\n"
+./mvnw clean install || failed "backend: $backend failed" 2
+
+cd ../$frontend
+
+printf "\n<=== loading dependencies for frontend: $frontend ===>\n"
+yarn || failed "yarn failed in $frontend" 3
+
+printf "\n<=== running unit tests for frontend: $frontend ===>\n"
+ng test --single-run || failed "$frontendui unit tests failed" 4
+
+printf "\n<=== running e2e tests for frontend: $frontend ===>\n"
+ng e2e || failed "$frontendui e2e tests failed" 5
+
+printf "\n<=== building frontend for production: $frontend ===>\n"
+yarn ng -- build --prod --aot --no-progress || failed "$frontendui production build failed" 6
+
+printf "\n<=== ALL BUILDS AND TESTS PASSED ===>\n"
